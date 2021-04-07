@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
  		setContentView(activityMainBinding.root)
 
 		//Initializing the DataBase
-		DataBaseHelper.initDatabase(this);
+		DataBaseHelper.initDatabase(this)
 
 
 		btnInsert.setOnClickListener {
