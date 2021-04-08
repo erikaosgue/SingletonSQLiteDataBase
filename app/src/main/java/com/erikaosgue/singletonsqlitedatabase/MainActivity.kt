@@ -14,9 +14,12 @@ class MainActivity : AppCompatActivity() {
  		activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
  		setContentView(activityMainBinding.root)
 
-		//Initializing the DataBase
-		DataBaseHelper.initDatabase(this)
+		setUpInsertData()
+		setUpReadData()
 
+	}
+
+	private fun setUpInsertData() {
 
 		btnInsert.setOnClickListener {
 
@@ -34,6 +37,10 @@ class MainActivity : AppCompatActivity() {
 			}
 		}
 
+	}
+
+	private fun setUpReadData() {
+
 		// Read data when clicking the button
 		btnRead.setOnClickListener {
 
@@ -44,8 +51,12 @@ class MainActivity : AppCompatActivity() {
 
 			// Add the id, name and age to the tvResult
 			for (i in 0 until data.size) {
-				tvResult.append("ID: " + data[i].id.toString() + "  |  " + "Name: " + data[i].name + "  |  " + "Age:" + data[i].age + "\n")
+				tvResult.append(
+						"ID: " + data[i].id.toString() +
+						"  |  " + "Name: " + data[i].name +
+						"  |  " + "Age:" + data[i].age + "\n")
 			}
+
 		}
 	}
 
